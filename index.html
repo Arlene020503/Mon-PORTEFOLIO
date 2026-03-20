@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arlene Assoua | Portfolio</title>
+    <!-- Google Fonts pour un look très premium -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#" class="nav-logo">Arlene.</a>
+            <div class="nav-links">
+                <a href="#about"><i class="fa-solid fa-user"></i> À propos</a>
+                <a href="#skills"><i class="fa-solid fa-code"></i> Compétences</a>
+                <a href="#projects"><i class="fa-solid fa-laptop-code"></i> Projets</a>
+                <a href="#education"><i class="fa-solid fa-graduation-cap"></i> Formation</a>
+                <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero fade-in">
+        <div class="hero-container">
+            <div class="profile-container">
+                <img src="photo.jpeg" alt="Arlene Assoua" class="profile">
+            </div>
+            <h1>Arlene Assoua</h1>
+            <p class="subtitle">Développeuse d'applications <span class="divider">|</span> Data & Intelligence Artificielle</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="fade-in">
+            <h2><i class="fa-solid fa-user"></i> À propos</h2>
+            <div class="card bento-card">
+                <p>Je suis une informaticienne spécialisée dans le développement d’applications web. Je possède un BTS en Informatique option Développement d’Applications obtenu à Pigier Côte d’Ivoire.</p>
+                <p>J’ai suivi une formation en introduction au développement web avec des compétences en Intelligence Artificielle à Gomycode.</p>
+                <p>Actuellement en formation Data et Intelligence Artificielle à Simplon Côte d’Ivoire, je développe mes compétences en Python, analyse de données et Machine Learning.</p>
+                <div class="highlight-text">
+                    <strong><i class="fa-solid fa-bullseye" style="color: var(--accent);"></i> Objectif :</strong> devenir développeuse spécialisée en Data et Intelligence Artificielle.
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="fade-in">
+            <h2><i class="fa-solid fa-code"></i> Compétences techniques</h2>
+            <div class="skills-container">
+                <div class="card bento-card skill-box">
+                    <h3>Langages</h3>
+                    <ul class="tag-list">
+                        <li>Python</li><li>JavaScript</li><li>PHP</li><li>SQL</li>
+                    </ul>
+                </div>
+                <div class="card bento-card skill-box">
+                    <h3>Développement web</h3>
+                    <ul class="tag-list">
+                        <li>HTML</li><li>CSS</li><li>JavaScript</li><li>PHP</li>
+                    </ul>
+                </div>
+                <div class="card bento-card skill-box">
+                    <h3>Bases de données</h3>
+                    <ul class="tag-list">
+                        <li>MySQL</li><li>Conception base données</li>
+                    </ul>
+                </div>
+                <div class="card bento-card skill-box">
+                    <h3>Outils</h3>
+                    <ul class="tag-list">
+                        <li>GitHub</li><li>VS Code</li><li>XAMPP</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="fade-in">
+            <h2><i class="fa-solid fa-laptop-code"></i> Projets</h2>
+            <div class="projects-container">
+                
+                <div class="card bento-card project-card">
+                    <div class="project-header">
+                        <h3>Application de sécurité <br><span>Analyse de risque Abidjan</span></h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Application web permettant d'évaluer les zones à risque.</p>
+                        <ul class="tech-tags">
+                            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>PHP</li><li>MySQL</li>
+                        </ul>
+                        <p class="features"><i class="fa-solid fa-gear"></i> <strong>Fonctions :</strong> Authentification, gestion utilisateurs, calcul risque.</p>
+                        <div class="gallery" id="securityGallery"></div>
+                        <button class="btn btn-outline" onclick="addProjectImages('securityGallery',['projet1.jpeg','projet2.jpeg','projet3.jpeg'])">
+                            <i class="fa-solid fa-image"></i> Afficher images
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card bento-card project-card">
+                    <div class="project-header">
+                        <h3>Site web Ar Tricot</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Site vitrine présentant les créations artisanales.</p>
+                        <ul class="tech-tags">
+                            <li>HTML</li><li>CSS</li><li>JavaScript</li>
+                        </ul>
+                        <div class="gallery" id="tricotGallery"></div>
+                        <button class="btn btn-outline" onclick="addProjectImages('tricotGallery',['tricot1.jpeg','tricot2.jpeg'])">
+                            <i class="fa-solid fa-image"></i> Afficher images
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card bento-card project-card">
+                    <div class="project-header">
+                        <h3>Projet Computer Vision</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Détection de visage avec OpenCV.</p>
+                        <ul class="tech-tags">
+                            <li>Python</li><li>OpenCV</li>
+                        </ul>
+                        <div class="gallery" id="opencvGallery"></div>
+                        <button class="btn btn-outline" onclick="addProjectImages('opencvGallery',['opencv.jpeg'])">
+                            <i class="fa-solid fa-image"></i> Afficher image
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="education" class="fade-in">
+            <h2><i class="fa-solid fa-graduation-cap"></i> Formation</h2>
+            <div class="education-container">
+                <div class="card bento-card edu-card">
+                    <div class="edu-date">En cours</div>
+                    <h3>Simplon Côte d'Ivoire</h3>
+                    <p>Formation Data Intelligence Artificielle</p>
+                </div>
+                <div class="card bento-card edu-card">
+                    <div class="edu-date">Diplôme obtenu</div>
+                    <h3>Pigier Côte d'Ivoire</h3>
+                    <p>BTS Informatique – Développement d’Applications</p>
+                </div>
+                <div class="card bento-card edu-card">
+                    <div class="edu-date">Certification</div>
+                    <h3>Gomycode</h3>
+                    <p>Introduction développement web avec bases IA</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="fade-in">
+            <h2><i class="fa-solid fa-envelope"></i> Contact</h2>
+            <div class="card bento-card contact-card">
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <i class="fa-solid fa-at"></i>
+                        <p>audreyassoua22@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <p>0768633906</p>
+                    </div>
+                    <a href="https://github.com/Arlene020503" target="_blank" class="contact-item link">
+                        <i class="fa-brands fa-github"></i>
+                        <p>github.com/Arlene020503</p>
+                    </a>
+                    <a href="https://www.linkedin.com/in/arlene-assoua-55b06427b" target="_blank" class="contact-item link">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                        <p>LinkedIn</p>
+                    </a>
+                </div>
+                <a class="btn btn-primary" href="mailto:audreyassoua22@gmail.com">
+                    <i class="fa-solid fa-paper-plane"></i> Me contacter
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Arlene Assoua | Conçu avec <span style="color: var(--primary);">❤</span></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
