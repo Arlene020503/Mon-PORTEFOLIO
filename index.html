@@ -17,7 +17,13 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-content">
-            <a href="#" class="nav-logo">Arlene.</a>
+            <a href="#" class="nav-logo">
+                <div class="nav-logo-icon">AA</div>
+                <div class="nav-logo-text">
+                    <span class="nav-logo-name">Arlene Assoua</span>
+                    <span class="nav-logo-title">Dev · Data · IA</span>
+                </div>
+            </a>
             <button class="hamburger" id="hamburger" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
@@ -35,16 +41,19 @@
     <header class="hero fade-in">
         <div class="hero-container">
             <div class="profile-container">
-                <img src="photo.jpeg" alt="Arlene Assoua" class="profile">
-                <div class="profile-ring"></div>
+                <div class="profile-frame">
+                    <img src="photo.jpeg" alt="Arlene Assoua" class="profile">
+                </div>
+                <div class="profile-status">Disponible pour un poste</div>
             </div>
             <h1>Arlene Assoua</h1>
             <p class="subtitle">
                 <span class="typed-text" id="typedText"></span><span class="cursor">|</span>
             </p>
             <div class="hero-badges">
-                <span class="badge"><i class="fa-solid fa-location-dot"></i> Côte d'Ivoire</span>
-                <span class="badge badge-green"><i class="fa-solid fa-circle"></i> Disponible</span>
+                <span class="badge"><i class="fa-solid fa-location-dot"></i> Abidjan, Côte d'Ivoire</span>
+                <span class="badge"><i class="fa-solid fa-graduation-cap"></i> Simplon CI · Data & IA</span>
+                <span class="badge"><i class="fa-brands fa-python"></i> Certifiée IBM</span>
             </div>
             <div class="hero-actions">
                 <a href="#contact" class="btn btn-primary">
@@ -194,10 +203,10 @@
                             <li>Workflow Automation</li>
                         </ul>
                         <p class="features"><i class="fa-solid fa-gear"></i> <strong>Fonctions :</strong> Réponses automatiques, recommandations touristiques, gestion des conversations, intégration API.</p>
-                        <div class="gallery" id="telegramGallery"></div>
-                        <button class="btn btn-outline btn-sm" onclick="toggleGallery('telegramGallery',['telegram1.jpeg','telegram2.jpeg'], this)">
-                            <i class="fa-solid fa-image"></i> Voir les captures
-                        </button>
+                        <div class="gallery-static">
+                            <img src="telegram1.jpeg" alt="Bot Telegram capture 1" class="static-img" data-gallery="telegram" data-index="0">
+                            <img src="telegram2.jpeg" alt="Bot Telegram capture 2" class="static-img" data-gallery="telegram" data-index="1">
+                        </div>
                     </div>
                 </div>
 
@@ -217,10 +226,10 @@
                             <li>DeepSeek</li>
                         </ul>
                         <p class="features"><i class="fa-solid fa-gear"></i> <strong>Fonctions :</strong> Chat IA en temps réel, recommandations de prestataires, interface mobile fluide, backend API PHP/Python.</p>
-                        <div class="gallery" id="chatgoGallery"></div>
-                        <button class="btn btn-outline btn-sm" onclick="toggleGallery('chatgoGallery',['chatgo1.jpeg','chatgo2.jpeg'], this)">
-                            <i class="fa-solid fa-image"></i> Voir les captures
-                        </button>
+                        <div class="gallery-static">
+                            <img src="chatgo1.jpeg" alt="Chat & Go capture 1" class="static-img" data-gallery="chatgo" data-index="0">
+                            <img src="chatgo2.jpeg" alt="Chat & Go capture 2" class="static-img" data-gallery="chatgo" data-index="1">
+                        </div>
                     </div>
                 </div>
 
@@ -239,10 +248,10 @@
                             <li>Desktop App</li>
                         </ul>
                         <p class="features"><i class="fa-solid fa-gear"></i> <strong>Fonctions :</strong> Calcul bilan comptable, calcul ROE, assistant IA local (Ollama), interface desktop compatible.</p>
-                        <div class="gallery" id="bilanGallery"></div>
-                        <button class="btn btn-outline btn-sm" onclick="toggleGallery('bilanGallery',['bilan1.jpeg','bilan2.jpeg'], this)">
-                            <i class="fa-solid fa-image"></i> Voir les captures
-                        </button>
+                        <div class="gallery-static">
+                            <img src="bilan1.jpeg" alt="Bilan Vision Pro capture 1" class="static-img" data-gallery="bilan" data-index="0">
+                            <img src="bilan2.jpeg" alt="Bilan Vision Pro capture 2" class="static-img" data-gallery="bilan" data-index="1">
+                        </div>
                     </div>
                 </div>
 
@@ -259,10 +268,11 @@
                             <li>HTML</li><li>CSS</li><li>JavaScript</li><li>PHP</li><li>MySQL</li>
                         </ul>
                         <p class="features"><i class="fa-solid fa-gear"></i> <strong>Fonctions :</strong> Authentification, gestion utilisateurs, calcul de risque par zone.</p>
-                        <div class="gallery" id="securityGallery"></div>
-                        <button class="btn btn-outline btn-sm" onclick="toggleGallery('securityGallery',['projet1.jpeg','projet2.jpeg','projet3.jpeg'], this)">
-                            <i class="fa-solid fa-image"></i> Voir les captures
-                        </button>
+                        <div class="gallery-static">
+                            <img src="projet1.jpeg" alt="App Sécurité capture 1" class="static-img" data-gallery="security" data-index="0">
+                            <img src="projet2.jpeg" alt="App Sécurité capture 2" class="static-img" data-gallery="security" data-index="1">
+                            <img src="projet3.jpeg" alt="App Sécurité capture 3" class="static-img" data-gallery="security" data-index="2">
+                        </div>
                     </div>
                 </div>
 
@@ -278,10 +288,10 @@
                         <ul class="tech-tags">
                             <li>HTML</li><li>CSS</li><li>JavaScript</li>
                         </ul>
-                        <div class="gallery" id="tricotGallery"></div>
-                        <button class="btn btn-outline btn-sm" onclick="toggleGallery('tricotGallery',['tricot1.jpeg','tricot2.jpeg'], this)">
-                            <i class="fa-solid fa-image"></i> Voir les captures
-                        </button>
+                        <div class="gallery-static">
+                            <img src="tricot1.jpeg" alt="Ar Tricot capture 1" class="static-img" data-gallery="tricot" data-index="0">
+                            <img src="tricot2.jpeg" alt="Ar Tricot capture 2" class="static-img" data-gallery="tricot" data-index="1">
+                        </div>
                     </div>
                 </div>
 
@@ -297,10 +307,9 @@
                         <ul class="tech-tags">
                             <li>Python</li><li>OpenCV</li>
                         </ul>
-                        <div class="gallery" id="opencvGallery"></div>
-                        <button class="btn btn-outline btn-sm" onclick="toggleGallery('opencvGallery',['opencv.jpeg'], this)">
-                            <i class="fa-solid fa-image"></i> Voir les captures
-                        </button>
+                        <div class="gallery-static">
+                            <img src="opencv.jpeg" alt="Computer Vision capture" class="static-img" data-gallery="opencv" data-index="0">
+                        </div>
                     </div>
                 </div>
 
@@ -320,10 +329,10 @@
                             <li>Wireframe</li>
                         </ul>
                         <p class="features"><i class="fa-solid fa-gear"></i> <strong>Compétences :</strong> Design système, composants réutilisables, prototypes interactifs, design responsive.</p>
-                        <div class="gallery" id="figmaGallery"></div>
-                        <button class="btn btn-outline btn-sm" onclick="toggleGallery('figmaGallery',['figma1.jpeg','figma2.jpeg'], this)">
-                            <i class="fa-solid fa-image"></i> Voir les captures
-                        </button>
+                        <div class="gallery-static">
+                            <img src="figma1.jpeg" alt="Maquettes Figma capture 1" class="static-img" data-gallery="figma" data-index="0">
+                            <img src="figma2.jpeg" alt="Maquettes Figma capture 2" class="static-img" data-gallery="figma" data-index="1">
+                        </div>
                     </div>
                 </div>
 
@@ -343,10 +352,10 @@
                             <li>Data Storytelling</li>
                         </ul>
                         <p class="features"><i class="fa-solid fa-gear"></i> <strong>Fonctions :</strong> Tableaux croisés, cartographie mondiale, filtres dynamiques, corrélations statistiques, visualisations interactives.</p>
-                        <div class="gallery" id="powerbiGallery"></div>
-                        <button class="btn btn-outline btn-sm" onclick="toggleGallery('powerbiGallery',['powerbi1.jpeg','powerbi2.jpeg'], this)">
-                            <i class="fa-solid fa-image"></i> Voir les captures
-                        </button>
+                        <div class="gallery-static">
+                            <img src="powerbi1.jpeg" alt="Dashboard Power BI capture 1" class="static-img" data-gallery="powerbi" data-index="0">
+                            <img src="powerbi2.jpeg" alt="Dashboard Power BI capture 2" class="static-img" data-gallery="powerbi" data-index="1">
+                        </div>
                     </div>
                 </div>
 
