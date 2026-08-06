@@ -449,6 +449,10 @@ h2 i { color: var(--primary); }
 .tag-purple li:hover { background: rgba(167,139,250,0.18); }
 .tag-yellow li { color: var(--yellow); background: rgba(251,191,36,0.08); border-color: rgba(251,191,36,0.2); }
 .tag-yellow li:hover { background: rgba(251,191,36,0.18); }
+.tag-pink li { color: var(--pink); background: rgba(244,114,182,0.08); border-color: rgba(244,114,182,0.2); }
+.tag-pink li:hover { background: rgba(244,114,182,0.18); }
+.tag-linkedin li { color: #60a5fa; background: rgba(96,165,250,0.08); border-color: rgba(96,165,250,0.2); }
+.tag-linkedin li:hover { background: rgba(96,165,250,0.18); }
 
 /* =========================================
    Filtres projets
@@ -538,6 +542,7 @@ h2 i { color: var(--primary); }
 .badge-desktop{ background: rgba(251,191,36,0.12); color: #fbbf24;        border: 1px solid rgba(251,191,36,0.3); }
 .badge-design { background: rgba(244,114,182,0.12);color: #f472b6;        border: 1px solid rgba(244,114,182,0.3); }
 .badge-dataviz{ background: rgba(251,146,60,0.12); color: #fb923c;        border: 1px solid rgba(251,146,60,0.3); }
+.badge-video  { background: rgba(239,68,68,0.12);  color: #f87171;        border: 1px solid rgba(239,68,68,0.3); }
 
 .project-body {
     padding: 20px 24px 24px;
@@ -620,6 +625,9 @@ h2 i { color: var(--primary); }
     color: var(--primary);
     flex-shrink: 0;
     transition: transform 0.25s ease;
+}
+.project-link > .fa-linkedin-in {
+    color: #0a66c2;
 }
 .project-link:hover > i { transform: translate(2px, -2px); }
 .project-link div { display: flex; flex-direction: column; gap: 2px; overflow: hidden; }
@@ -742,6 +750,71 @@ h2 i { color: var(--primary); }
     margin-top: 3px;
 }
 .cert-issuer strong { color: #4589ff; }
+
+/* =========================================
+   Bannière LinkedIn
+   ========================================= */
+.linkedin-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: linear-gradient(135deg, rgba(10,102,194,0.12), rgba(10,102,194,0.04));
+    border: 1px solid rgba(10,102,194,0.3);
+    border-radius: var(--radius);
+    padding: 22px 28px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.linkedin-banner-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex: 1;
+    min-width: 0;
+}
+.linkedin-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    background: #0a66c2;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    color: #fff;
+    flex-shrink: 0;
+    box-shadow: 0 4px 16px rgba(10,102,194,0.35);
+}
+.linkedin-banner-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 4px;
+}
+.linkedin-banner-sub {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+.btn-linkedin {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 22px;
+    background: #0a66c2;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    font-family: var(--font-main);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+.btn-linkedin:hover {
+    background: #0856a8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(10,102,194,0.4);
+}
 
 /* =========================================
    Contact
