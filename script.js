@@ -30,13 +30,23 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('open');
             navLinks.classList.toggle('open');
+            document.body.classList.toggle('menu-open');
         });
         // Fermer le menu au clic sur un lien
         navLinks.querySelectorAll('a').forEach(a => {
             a.addEventListener('click', () => {
                 hamburger.classList.remove('open');
                 navLinks.classList.remove('open');
+                document.body.classList.remove('menu-open');
             });
+        });
+        // Fermer le menu au clic sur le backdrop
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.navbar') && navLinks.classList.contains('open')) {
+                hamburger.classList.remove('open');
+                navLinks.classList.remove('open');
+                document.body.classList.remove('menu-open');
+            }
         });
     }
 
@@ -85,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 obs.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
     fadeEls.forEach(el => fadeObserver.observe(el));
 
     /* ------------------------------------------
@@ -156,23 +166,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
 
+    // Fonction réutilisable pour filtrer les projets
+    function filterProjects(filterValue) {
+        projectCards.forEach(card => {
+            const cat = card.dataset.category;
+            const visible = filterValue === 'all' || cat === filterValue;
+            if (visible) {
+                card.classList.remove('hidden');
+                card.style.animation = 'none';
+                void card.offsetWidth; // reflow
+                card.style.animation = 'fadeInCard 0.4s ease forwards';
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+    }
+
+    // Initialiser l'affichage au chargement
+    filterProjects('all');
+
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             const filter = btn.dataset.filter;
-            projectCards.forEach(card => {
-                const cat = card.dataset.category;
-                const visible = filter === 'all' || cat === filter;
-                if (visible) {
-                    card.classList.remove('hidden');
-                    card.style.animation = 'none';
-                    void card.offsetWidth; // reflow
-                    card.style.animation = 'fadeInCard 0.4s ease forwards';
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
+            filterProjects(filter);
         });
     });
 
@@ -273,6 +291,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
-
-
-
