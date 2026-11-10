@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arlene Assoua | Développeuse Data & IA</title>
+    <meta name="description" content="Portfolio d'Arlene Assoua — développeuse Data & IA à Abidjan : applications web, mobile Flutter, agents IA et analyse de données.">
+    <meta name="theme-color" content="#8b5fbf">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Barre de progression de lecture -->
+    <div class="read-progress" id="readProgress"></div>
+
+    <!-- ================= NAVIGATION ================= -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-content">
+            <a href="#" class="nav-logo" aria-label="Retour en haut">
+                <span class="logo-bracket">&lt;</span>ARLENE<span class="logo-accent">.IA</span><span class="logo-bracket">/&gt;</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#about">À propos</a>
+                <a href="#skills">Compétences</a>
+                <a href="#projects">Projets</a>
+                <a href="#education">Formation</a>
+                <a href="#contact">Contact</a>
+                <a href="#contact" class="nav-cta">Parlons projet <span class="arrow">↗</span></a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+    <header class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <p class="eyebrow"><span class="dot"></span> Développeuse Data &amp; IA · Abidjan, Côte d'Ivoire</p>
+                <h1 class="display">
+                    Je transforme<br>
+                    <span class="accent">les données</span><br>
+                    en solutions.
+                </h1>
+                <p class="hero-intro">
+                    Je suis <strong>Arlene Assoua</strong>. Je conçois des applications web et mobiles,
+                    des agents IA et des outils d'analyse de données — utiles, simples et pensés pour les vrais besoins.
+                </p>
+                <p class="hero-typed mono">
+                    <span class="typed-prefix">&gt;</span> <span class="typed-text" id="typedText"></span><span class="cursor">_</span>
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">Découvrir mes projets <span class="arrow">↘</span></a>
+                    <a href="cv.pdf" download class="btn-link" id="cvDownloadBtn">Télécharger mon CV <span class="arrow">↓</span></a>
+                </div>
+                <div class="socials">
+                    <a href="https://www.linkedin.com/in/arlene-assoua-55b06427b" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Arlene020503" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.tiktok.com/@artech002?_r=1&_t=ZN-99LF98iSne2" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="mailto:audreyassoua22@gmail.com" aria-label="Email"><i class="fa-solid fa-at"></i></a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="photo-frame">
+                    <img src="photo.jpeg" alt="Arlene Assoua">
+                </div>
+                <div class="hero-tag tag-top mono">Simplon CI · Data &amp; IA</div>
+                <div class="hero-tag tag-bottom mono"><i class="fa-solid fa-medal"></i> Certifiée IBM</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ================= 01 · À PROPOS ================= -->
+        <section id="about" class="section section-tint fade-in">
+            <div class="container about-grid">
+                <div class="big-number" aria-hidden="true">01</div>
+                <div class="about-content">
+                    <p class="label mono">01 / À propos</p>
+                    <h2 class="title">
+                        Coder avec rigueur.<br>
+                        <span class="accent">Créer avec sens.</span>
+                    </h2>
+                    <p>Développeuse <strong>Data et Intelligence Artificielle</strong> junior, titulaire d'un <strong>BTS en développement d'applications</strong> et actuellement en formation chez <strong>Simplon Côte d'Ivoire</strong>. Je développe mes compétences en programmation Python, en analyse de données, en gestion de bases de données SQL et en conception de solutions intégrant des agents IA.</p>
+                    <p>Mon expérience entrepreneuriale avec <strong>AR TRICOT</strong> m'a également permis de renforcer mon autonomie, ma créativité, mon sens de l'organisation et ma capacité à gérer un projet de la conception jusqu'à la relation client.</p>
+                    <p class="objective"><span class="mono">Objectif →</span> mettre ces compétences au service de projets numériques utiles et continuer à progresser au sein d'une équipe.</p>
+
+                    <div class="stats">
+                        <div class="stat"><span class="stat-number" data-target="12">0</span><span class="stat-label mono">Projets réalisés</span></div>
+                        <div class="stat"><span class="stat-number" data-target="6">0</span><span class="stat-label mono">Formations &amp; certifs</span></div>
+                        <div class="stat"><span class="stat-number" data-target="5">0</span><span class="stat-label mono">Technologies IA</span></div>
+                        <div class="stat"><span class="stat-number" data-target="4">0</span><span class="stat-label mono">Langages maîtrisés</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 02 · COMPÉTENCES ================= -->
+        <section id="skills" class="section fade-in">
+            <div class="container skills-grid">
+                <div class="skills-intro">
+                    <p class="label mono">02 / Stack</p>
+                    <h2 class="title">Mes outils<br><span class="accent">pour créer.</span></h2>
+                    <p class="muted">Une boîte à outils pensée pour passer d'une idée — ou d'un jeu de données — à une solution qui fonctionne vraiment.</p>
+                </div>
+
+                <div class="skills-board">
+                    <div class="skill-tiles">
+                        <div class="skill-tile"><span class="lvl mono">Avancé · 85%</span><span class="name"><i class="devicon-python-plain colored"></i> Python</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div></div>
+                        <div class="skill-tile"><span class="lvl mono">Avancé · 90%</span><span class="name"><i class="devicon-html5-plain colored"></i> HTML / CSS</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div></div>
+                        <div class="skill-tile"><span class="lvl mono">Intermédiaire · 70%</span><span class="name"><i class="devicon-php-plain colored"></i> PHP / MySQL</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div></div>
+                        <div class="skill-tile"><span class="lvl mono">En progression · 30%</span><span class="name"><i class="devicon-flutter-plain colored"></i> Flutter</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="30"></div></div></div>
+                        <div class="skill-tile"><span class="lvl mono">En progression · 30%</span><span class="name"><i class="fa-solid fa-brain"></i> Machine Learning</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="30"></div></div></div>
+                        <div class="skill-tile"><span class="lvl mono">Débutant · 20%</span><span class="name"><i class="devicon-javascript-plain colored"></i> JavaScript</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="20"></div></div></div>
+                    </div>
+
+                    <div class="skill-groups">
+                        <div class="skill-group"><h3 class="mono">Langages</h3><p>Python · JavaScript · PHP · SQL · Dart</p></div>
+                        <div class="skill-group"><h3 class="mono">IA &amp; Data</h3><p>Ollama · DeepSeek · Groq · OpenCV · n8n · Machine Learning</p></div>
+                        <div class="skill-group"><h3 class="mono">Frameworks &amp; Outils</h3><p>Flutter · Flask · GitHub · VS Code · XAMPP · Telegram API</p></div>
+                        <div class="skill-group"><h3 class="mono">Design &amp; Data Viz</h3><p>Figma · Power BI · UI/UX · Prototypage</p></div>
+                        <div class="skill-group"><h3 class="mono">Bases de données</h3><p>MySQL · TiDB Cloud · Conception BDD</p></div>
+                        <div class="skill-group"><h3 class="mono">Contenu</h3><p>Vidéos IA · Narration · Montage · Posts LinkedIn · Veille tech</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 03 · PROJETS ================= -->
+        <section id="projects" class="section section-tint fade-in">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <p class="label mono">03 / Sélection</p>
+                        <h2 class="title">Des idées qui<br><span class="accent">prennent vie.</span></h2>
+                    </div>
+                    <p class="muted">Applications web et mobiles, agents IA, analyse de données et design : des projets menés de l'idée jusqu'au résultat.</p>
+                </div>
+
+                <div class="filter-bar">
+                    <button class="filter-btn active" data-filter="all">Tous</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="ia">IA / Data</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile</button>
+                    <button class="filter-btn" data-filter="desktop">Desktop</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                    <button class="filter-btn" data-filter="dataviz">Data Viz</button>
+                    <button class="filter-btn" data-filter="video">Vidéo</button>
+                </div>
+
+                <div class="projects-container">
+
+                <!-- Projet : MonLogement (Web + Mobile) -->
+                <div class="card bento-card project-card" data-category="web mobile ia">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fa-solid fa-house-chimney"></i></div>
+                        <h3>MonLogement<br><span>Location immobilière en Côte d'Ivoire — Web & Mobile</span></h3>
+                        <span class="project-badge badge-mobile">Web · Mobile · IA</span>
+                    </div>
+                    <div class="project-body">
+                        <p>Plateforme de location de logements pensée pour lutter contre les arnaques et les frais de visite élevés. Les locataires trouvent un logement et contactent directement le propriétaire ; les propriétaires publient et gèrent leurs annonces. <strong>Une seule base de code Flutter</strong> pour la version web et l'application Android.</p>
+                        <ul class="tech-tags">
+                            <li><i class="devicon-flutter-plain colored"></i> Flutter</li>
+                            <li><i class="devicon-python-plain colored"></i> Flask</li>
+                            <li><i class="devicon-mysql-plain colored"></i> MySQL (TiDB Cloud)</li>
+                            <li><i class="fa-solid fa-brain"></i> Machine Learning</li>
+                            <li><i class="fa-solid fa-robot"></i> Agent IA (Groq)</li>
+                        </ul>
+                        <p class="features"><i class="fa-solid fa-gear"></i> <strong>Fonctions :</strong> recherche et filtres, estimation du prix par ML, agent IA conversationnel (conseils de quartiers), favoris, questionnaire de préférences, publication d'annonces avec photos, contact WhatsApp / email, signalement, tableau de bord propriétaire, mode sombre, FR / EN.</p>
+                        <div class="gallery-static gallery-phone">
+                            <img src="monlogement1.jpeg" alt="MonLogement — écran de démarrage" class="static-img" data-gallery="monlogement" data-index="0">
+                            <img src="monlogement4.jpeg" alt="MonLogement — accueil locataire avec recherche" class="static-img" data-gallery="monlogement" data-index="1">
+                            <img src="monlogement2.jpeg" alt="MonLogement — assistant IA" class="static-img" data-gallery="monlogement" data-index="2">
+                            <img src="monlogement3.jpeg" alt="MonLogement — profil locataire" class="static-img" data-gallery="monlogement" data-index="3">
+                            <img src="monlogement5.jpeg" alt="MonLogement — espace propriétaire" class="static-img" data-gallery="monlogement" data-index="4">
+                            <img src="monlogement6.jpeg" alt="MonLogement — profil propriétaire" class="static-img" data-gallery="monlogement" data-index="5">
+                        </div>
+                        <div class="project-links">
+                            <!-- ⚠️ Remplacer LIEN_SITE_WEB par l'adresse Netlify du site -->
+                            <a href="LIEN_SITE_WEB" target="_blank" rel="noopener" class="project-link">
+                                <i class="fa-solid fa-globe"></i>
+                                <div>
+                                    <span class="link-label">Ouvrir la version web</span>
+                                    <span class="link-url">Version web · Netlify</span>
+                                </div>
+                            </a>
+                            <!-- ⚠️ Remplacer LIEN_APK par le lien de téléchargement de l'APK -->
+                            <a href="LIEN_APK" target="_blank" rel="noopener" class="project-link project-download">
+                                <i class="fa-brands fa-android"></i>
+                                <div>
+                                    <span class="link-label">Télécharger l'application Android</span>
+                                    <span class="link-url">MonLogement.apk</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet : Ar_NalyseIA -->
+                <div class="card bento-card project-card" data-category="desktop ia">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                        <h3>Ar_NalyseIA<br><span>Analyse d'états financiers avec IA locale</span></h3>
+                        <span class="project-badge badge-desktop">Desktop · IA</span>
+                    </div>
+                    <div class="project-body">
+                        <p>Nouvelle version repensée de <strong>BilanVision PRO</strong> : application desktop Python d'analyse des états financiers, avec un assistant IA qui tourne en local (les données restent sur l'ordinateur). « Ar » pour Arlène, « Nalyse » pour analyse.</p>
+                        <ul class="tech-tags">
+                            <li><i class="devicon-python-plain colored"></i> Python</li>
+                            <li><i class="fa-solid fa-robot"></i> Ollama (IA locale)</li>
+                            <li><i class="fa-solid fa-desktop"></i> Desktop App</li>
+                        </ul>
+                        <p class="features"><i class="fa-solid fa-gear"></i> <strong>Fonctions :</strong> analyse de bilans et ratios financiers, tableau de bord, assistant IA sur une page dédiée, nouvelle interface aux couleurs violettes.</p>
+                        <div class="gallery-static">
+                            <img src="analyse1.jpeg" alt="Ar_NalyseIA — assistant IA" class="static-img" data-gallery="arnalyse" data-index="0">
+                            <img src="analyse2.jpeg" alt="Ar_NalyseIA — historique des analyses" class="static-img" data-gallery="arnalyse" data-index="1">
+                            <img src="analyse3.jpeg" alt="Ar_NalyseIA — tableau de bord d'une analyse" class="static-img" data-gallery="arnalyse" data-index="2">
+                        </div>
+                        <div class="project-links">
+                            <a href="Ar_NalyseIA.exe" download class="project-link project-download">
+                                <i class="fa-solid fa-download"></i>
+                                <div>
+                                    <span class="link-label">Télécharger l'app desktop (Windows)</span>
+                                    <span class="link-url">Ar_NalyseIA.exe · 52 Mo</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 1 : Bot Telegram Tourisme -->
+                <div class="card bento-card project-card" data-category="ia">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fa-brands fa-telegram"></i></div>
+                        <h3>Bot Telegram Touristique<br><span>Agent IA — Tourisme en Côte d'Ivoire</span></h3>
+                        <span class="project-badge badge-ia">IA / Automation</span>
+                    </div>
+                    <div class="project-body">
+                        <p>Agent conversationnel Telegram capable de fournir des informations touristiques sur la Côte d'Ivoire : sites à visiter, hôtels, restaurants et conseils pratiques.</p>
+                        <ul class="tech-tags">
+                            <li><i class="fa-brands fa-telegram"></i> Telegram</li>
+                            <li><i class="fa-solid fa-diagram-project"></i> n8n</li>
+                            <li><i class="fa-solid fa-gears"></i> Workflow Automation</li>
+                        </ul>
+                        <p class="features"><i class="fa-solid fa-gear"></i> <strong>Fonctions :</strong> Réponses automatiques, recommandations touristiques, gestion des conversations, intégration API.</p>
+                        <div class="gallery-static">
+                            <img src="telegram1.jpeg" alt="Bot Telegram capture 1" class="static-img" data-gallery="telegram" data-index="0">
+                            <img src="telegram2.jpeg" alt="Bot Telegram capture 2" class="static-img" data-gallery="telegram" data-index="1">
+                        </div>
+                        <div class="project-links">
+                            <a href="https://t.me/Agent_Tourismebot" target="_blank" rel="noopener" class="project-link">
+                                <i class="fa-brands fa-telegram"></i>
+                                <div>
+                                    <span class="link-label">Ouvrir le bot Telegram</span>
+                                    <span class="link-url">t.me/Agent_Tourismebot</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 2 : Chat & Go -->
+                <div class="card bento-card project-card" data-category="mobile">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                        <h3>Chat & Go<br><span>Application Mobile IA</span></h3>
+                        <span class="project-badge badge-mobile">Mobile</span>
+                    </div>
+                    <div class="project-body">
+                        <p>Application mobile permettant à un utilisateur de discuter avec une IA pour obtenir des recommandations personnalisées sur des prestataires de services.</p>
+                        <ul class="tech-tags">
+                            <li><i class="devicon-flutter-plain colored"></i> Flutter</li>
+                            <li><i class="devicon-python-plain colored"></i> Python</li>
+                            <li><i class="devicon-php-plain colored"></i> PHP</li>
+                            <li><i class="fa-solid fa-brain"></i> DeepSeek</li>
+                        </ul>
+                        <p class="features"><i class="fa-solid fa-gear"></i> <strong>Fonctions :</strong> Chat IA en temps réel, recommandations de prestataires, interface mobile fluide, backend API PHP/Python.</p>
+                        <div class="gallery-static">
+                            <img src="chatgo1.jpeg" alt="Chat & Go capture 1" class="static-img" data-gallery="chatgo" data-index="0">
+                            <img src="chatgo2.jpeg" alt="Chat & Go capture 2" class="static-img" data-gallery="chatgo" data-index="1">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 3 : Bilan Vision Pro -->
+                <div class="card bento-card project-card" data-category="desktop">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <h3>Bilan Vision Pro<br><span>Application Desktop — Comptabilité IA</span></h3>
+                        <span class="project-badge badge-desktop">Desktop</span>
+                    </div>
+                    <div class="project-body">
+                        <p>Application desktop de gestion financière permettant de calculer les bilans et le ROE (Return on Equity). Dotée d'une IA locale intégrée via Ollama pour les requêtes intelligentes.</p>
+                        <ul class="tech-tags">
+                            <li><i class="devicon-python-plain colored"></i> Python</li>
+                            <li><i class="fa-solid fa-robot"></i> Ollama (IA locale)</li>
+                            <li><i class="fa-solid fa-desktop"></i> Desktop App</li>
+                        </ul>
+                        <p class="features"><i class="fa-solid fa-gear"></i> <strong>Fonctions :</strong> Calcul bilan comptable, calcul ROE, assistant IA local (Ollama), interface desktop compatible.</p>
+                        <div class="gallery-static">
+                            <img src="bilan1.jpeg" alt="Bilan Vision Pro capture 1" class="static-img" data-gallery="bilan" data-index="0">
+                            <img src="bilan2.jpeg" alt="Bilan Vision Pro capture 2" class="static-img" data-gallery="bilan" data-index="1">
+                        </div>
+                        <div class="project-links">
+                            <a href="BilanVisionPro.exe" download class="project-link project-download">
+                                <i class="fa-solid fa-download"></i>
+                                <div>
+                                    <span class="link-label">Télécharger l'app desktop</span>
+                                    <span class="link-url">BilanVisionPro.exe</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 4 : Application Sécurité -->
+                <div class="card bento-card project-card" data-category="web">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3>Application de Sécurité<br><span>Analyse de risque — Abidjan</span></h3>
+                        <span class="project-badge badge-web">Web</span>
+                    </div>
+                    <div class="project-body">
+                        <p>Application web permettant d'évaluer et de cartographier les zones à risque sécuritaire à Abidjan.</p>
+                        <ul class="tech-tags">
+                            <li><i class="devicon-html5-plain colored"></i> HTML</li>
+                            <li><i class="devicon-css3-plain colored"></i> CSS</li>
+                            <li><i class="devicon-javascript-plain colored"></i> JavaScript</li>
+                            <li><i class="devicon-php-plain colored"></i> PHP</li>
+                            <li><i class="devicon-mysql-plain colored"></i> MySQL</li>
+                        </ul>
+                        <p class="features"><i class="fa-solid fa-gear"></i> <strong>Fonctions :</strong> Authentification, gestion utilisateurs, calcul de risque par zone.</p>
+                        <div class="local-note">
+                            <i class="fa-solid fa-location-dot"></i> Application restée locale : elle n’est pas hébergée en ligne et reste accessible uniquement en environnement local.
+                        </div>
+                        <div class="gallery-static">
+                            <img src="projet1.jpeg" alt="App Sécurité capture 1" class="static-img" data-gallery="security" data-index="0">
+                            <img src="projet2.jpeg" alt="App Sécurité capture 2" class="static-img" data-gallery="security" data-index="1">
+                            <img src="projet3.jpeg" alt="App Sécurité capture 3" class="static-img" data-gallery="security" data-index="2">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 5 : Ar Tricot -->
+                <div class="card bento-card project-card" data-category="web">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fa-solid fa-store"></i></div>
+                        <h3>Site Web Ar Tricot<br><span>Site Vitrine</span></h3>
+                        <span class="project-badge badge-web">Web</span>
+                    </div>
+                    <div class="project-body">
+                        <p>Site vitrine élégant présentant les créations artisanales de tricot. Design soigné et responsive.</p>
+                        <ul class="tech-tags">
+                            <li><i class="devicon-html5-plain colored"></i> HTML</li>
+                            <li><i class="devicon-css3-plain colored"></i> CSS</li>
+                            <li><i class="devicon-javascript-plain colored"></i> JavaScript</li>
+                        </ul>
+                        <div class="gallery-static">
+                            <img src="tricot1.jpeg" alt="Ar Tricot capture 1" class="static-img" data-gallery="tricot" data-index="0">
+                            <img src="tricot2.jpeg" alt="Ar Tricot capture 2" class="static-img" data-gallery="tricot" data-index="1">
+                        </div>
+                        <div class="project-links">
+                            <a href="https://ar-tricot.vercel.app" target="_blank" rel="noopener" class="project-link">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                <div>
+                                    <span class="link-label">Voir le site</span>
+                                    <span class="link-url">ar-tricot.vercel.app</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 6 : Computer Vision -->
+                <div class="card bento-card project-card" data-category="ia">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fa-solid fa-eye"></i></div>
+                        <h3>Computer Vision<br><span>Détection de visage</span></h3>
+                        <span class="project-badge badge-ia">IA / Data</span>
+                    </div>
+                    <div class="project-body">
+                        <p>Projet de détection de visages en temps réel utilisant OpenCV. Application des techniques de vision par ordinateur.</p>
+                        <ul class="tech-tags">
+                            <li><i class="devicon-python-plain colored"></i> Python</li>
+                            <li><i class="devicon-opencv-plain colored"></i> OpenCV</li>
+                        </ul>
+                        <div class="gallery-static">
+                            <img src="opencv.jpeg" alt="Computer Vision capture" class="static-img" data-gallery="opencv" data-index="0">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 7 : Maquettes Figma -->
+                <div class="card bento-card project-card" data-category="design">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fa-brands fa-figma"></i></div>
+                        <h3>Maquettes Figma<br><span>Design UI/UX — Prototypage</span></h3>
+                        <span class="project-badge badge-design">Design</span>
+                    </div>
+                    <div class="project-body">
+                        <p>Conception de maquettes et prototypes interactifs pour des applications web et mobile. Travail sur l'ergonomie, les wireframes, les composants et les flows utilisateurs.</p>
+                        <ul class="tech-tags">
+                            <li><i class="devicon-figma-plain colored"></i> Figma</li>
+                            <li><i class="fa-solid fa-pen-ruler"></i> UI/UX Design</li>
+                            <li><i class="fa-solid fa-object-group"></i> Prototypage</li>
+                            <li><i class="fa-solid fa-pencil"></i> Wireframe</li>
+                        </ul>
+                        <p class="features"><i class="fa-solid fa-gear"></i> <strong>Compétences :</strong> Design système, composants réutilisables, prototypes interactifs, design responsive.</p>
+                        <div class="gallery-static">
+                            <img src="figma1.jpeg" alt="Maquettes Figma capture 1" class="static-img" data-gallery="figma" data-index="0">
+                            <img src="figma2.jpeg" alt="Maquettes Figma capture 2" class="static-img" data-gallery="figma" data-index="1">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 8 : Dashboard Power BI -->
+                <div class="card bento-card project-card" data-category="dataviz">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fa-solid fa-chart-column"></i></div>
+                        <h3>Dashboard Power BI<br><span>Conflits armés & Taux d'homicide mondial</span></h3>
+                        <span class="project-badge badge-dataviz">Data Viz</span>
+                    </div>
+                    <div class="project-body">
+                        <p>Tableau de bord analytique Power BI réalisant une <strong>analyse croisée</strong> entre les conflits armés et le taux d'homicide dans le monde. Visualisation interactive des corrélations géographiques et temporelles.</p>
+                        <ul class="tech-tags">
+                            <li><i class="fa-solid fa-chart-bar"></i> Power BI</li>
+                            <li><i class="fa-solid fa-table"></i> Analyse de données</li>
+                            <li><i class="fa-solid fa-arrows-to-dot"></i> Analyse croisée</li>
+                            <li><i class="fa-solid fa-chart-area"></i> Data Storytelling</li>
+                        </ul>
+                        <p class="features"><i class="fa-solid fa-gear"></i> <strong>Fonctions :</strong> Tableaux croisés, cartographie mondiale, filtres dynamiques, corrélations statistiques, visualisations interactives.</p>
+                        <div class="gallery-static">
+                            <img src="powerbi1.jpeg" alt="Dashboard Power BI capture 1" class="static-img" data-gallery="powerbi" data-index="0">
+                            <img src="powerbi2.jpeg" alt="Dashboard Power BI capture 2" class="static-img" data-gallery="powerbi" data-index="1">
+                        </div>
+                        <div class="project-links">
+                            <a href="https://drive.google.com/drive/folders/1SOWpOEqE8xh4eTded-bOEYmdXBY7mDcf?usp=drive_link" target="_blank" rel="noopener" class="project-link">
+                                <i class="fa-brands fa-google-drive"></i>
+                                <div>
+                                    <span class="link-label">Voir le dossier Power BI</span>
+                                    <span class="link-url">drive.google.com · Power BI</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 9 : Sites d'anniversaire -->
+                <div class="card bento-card project-card" data-category="web">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fa-solid fa-cake-candles"></i></div>
+                        <h3>Sites d'Événements<br><span>Anniversaires & invitation de mariage</span></h3>
+                        <span class="project-badge badge-web">Web</span>
+                    </div>
+                    <div class="project-body">
+                        <p>Création de sites web sur mesure pour des événements : deux sites d'anniversaire personnalisés et un site d'invitation de mariage complet. Des expériences digitales uniques et mémorables pour chaque célébration.</p>
+                        <ul class="tech-tags">
+                            <li><i class="devicon-html5-plain colored"></i> HTML</li>
+                            <li><i class="devicon-css3-plain colored"></i> CSS</li>
+                            <li><i class="devicon-javascript-plain colored"></i> JavaScript</li>
+                        </ul>
+                        <p class="features"><i class="fa-solid fa-gear"></i> <strong>Fonctions :</strong> Animations de confettis, compte à rebours, galerie photos, messages personnalisés, accès par code d'invitation, confirmation de présence (RSVP), livre d'or, design sur mesure.</p>
+                        <div class="project-links">
+                            <a href="https://anniversaire-jennifer.vercel.app/" target="_blank" rel="noopener" class="project-link">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                <div>
+                                    <span class="link-label">Site Jennifer</span>
+                                    <span class="link-url">anniversaire-jennifer.vercel.app</span>
+                                </div>
+                            </a>
+                            <a href="https://touti-beta.vercel.app/" target="_blank" rel="noopener" class="project-link">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                <div>
+                                    <span class="link-label">Site Touti</span>
+                                    <span class="link-url">touti-beta.vercel.app</span>
+                                </div>
+                            </a>
+                            <a href="https://ar1926.onrender.com/" target="_blank" rel="noopener" class="project-link">
+                                <i class="fa-solid fa-ring"></i>
+                                <div>
+                                    <span class="link-label">Invitation de mariage</span>
+                                    <span class="link-url">ar1926.onrender.com</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 10 : Vidéo IA éducative -->
+                <div class="card bento-card project-card" data-category="video">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fa-solid fa-film"></i></div>
+                        <h3>Vidéo IA Éducative<br><span>Création de contenu avec l'Intelligence Artificielle</span></h3>
+                        <span class="project-badge badge-video">Vidéo / IA</span>
+                    </div>
+                    <div class="project-body">
+                        <p>Production de vidéos et films éducatifs en utilisant des outils d'Intelligence Artificielle. Création de contenu pédagogique sur la tech et l'IA, partagé sur LinkedIn.</p>
+                        <ul class="tech-tags">
+                            <li><i class="fa-solid fa-wand-magic-sparkles"></i> IA générative</li>
+                            <li>Script & Narration</li>
+                            <li>Montage vidéo</li>
+                            <li>Contenu éducatif</li>
+                        </ul>
+                        <p class="features"><i class="fa-solid fa-gear"></i> <strong>Fonctions :</strong> Génération de visuels IA, narration automatisée, montage, diffusion de contenu tech & IA.</p>
+                        <div class="project-links">
+                            <a href="https://www.linkedin.com/posts/arlene-assoua-55b06427b_intelligenceartificielle-ia-tech-activity-7490059748583608320-DCmM" target="_blank" rel="noopener" class="project-link">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                                <div>
+                                    <span class="link-label">Voir la vidéo sur LinkedIn</span>
+                                    <span class="link-url">linkedin.com · #IA #Tech #Éducation</span>
+                                </div>
+                            </a>
+                            <a href="https://www.tiktok.com/@artech002?_r=1&_t=ZN-99LF98iSne2" target="_blank" rel="noopener" class="project-link">
+                                <i class="fa-brands fa-tiktok"></i>
+                                <div>
+                                    <span class="link-label">Voir les contenus TikTok</span>
+                                    <span class="link-url">tiktok.com/@artech002</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+        </section>
+
+        <!-- ================= 04 · FORMATION ================= -->
+        <section id="education" class="section fade-in">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <p class="label mono">04 / Parcours</p>
+                        <h2 class="title">Des preuves<br><span class="accent">qui comptent.</span></h2>
+                    </div>
+                    <p class="muted">Formations, diplômes et certifications qui structurent mon parcours en développement, data et IA.</p>
+                </div>
+
+                <div class="edu-list">
+                    <article class="edu-item">
+                        <span class="edu-num mono">01</span>
+                        <div class="edu-main">
+                            <span class="edu-date mono current">En cours</span>
+                            <h3>Simplon Côte d'Ivoire</h3>
+                            <p>Formation Data &amp; Intelligence Artificielle</p>
+                        </div>
+                        <p class="edu-tags mono">Python · Machine Learning · Data Analysis</p>
+                    </article>
+                    <article class="edu-item">
+                        <span class="edu-num mono">02</span>
+                        <div class="edu-main">
+                            <span class="edu-date mono">Certification · IBM · 2026</span>
+                            <h3>IBM — Python 101 for Data Science</h3>
+                            <p>Fondamentaux de Python appliqués à la Data Science : types, structures, fonctions, Pandas et NumPy.</p>
+                        </div>
+                        <a class="edu-link" href="python%20certificat.pdf" target="_blank" rel="noopener">Voir le certificat <span class="arrow">↗</span></a>
+                    </article>
+                    <article class="edu-item">
+                        <span class="edu-num mono">03</span>
+                        <div class="edu-main">
+                            <span class="edu-date mono">Certification · Coursera</span>
+                            <h3>Exploratory Data Analysis for Machine Learning</h3>
+                            <p>Préparation, exploration et visualisation des données appliquées au Machine Learning.</p>
+                        </div>
+                        <a class="edu-link" href="Coursera%20machine%20learnig.pdf" target="_blank" rel="noopener">Voir le certificat <span class="arrow">↗</span></a>
+                    </article>
+                    <article class="edu-item">
+                        <span class="edu-num mono">04</span>
+                        <div class="edu-main">
+                            <span class="edu-date mono">Certification · Gomycode</span>
+                            <h3>Introduction au développement web &amp; bases IA</h3>
+                            <p>HTML/CSS, JavaScript et premières notions d'intelligence artificielle.</p>
+                        </div>
+                        <a class="edu-link" href="Begnan%20Arlene%20Audrey%20Delaure%20ASSOUA-Introduction%20to%20Web%20Development%20with%20AI%20skills%20Certificate%20of%20Completion.pdf" target="_blank" rel="noopener">Voir le certificat <span class="arrow">↗</span></a>
+                    </article>
+                    <article class="edu-item">
+                        <span class="edu-num mono">05</span>
+                        <div class="edu-main">
+                            <span class="edu-date mono">Diplôme obtenu</span>
+                            <h3>Pigier Côte d'Ivoire</h3>
+                            <p>BTS Informatique — Développement d'Applications</p>
+                        </div>
+                        <p class="edu-tags mono">PHP · JavaScript · MySQL</p>
+                    </article>
+                    <article class="edu-item">
+                        <span class="edu-num mono">06</span>
+                        <div class="edu-main">
+                            <span class="edu-date mono">Certification · Pigier CI · 2021</span>
+                            <h3>Microsoft Office Specialist (MOS) Excel</h3>
+                            <p>Tableaux, formules et analyse de données sur Excel.</p>
+                        </div>
+                        <p class="edu-tags mono">Excel · Formules · Analyse</p>
+                    </article>
+                </div>
+
+                <!-- Bloc CV -->
+                <div class="cv-block">
+                    <div>
+                        <p class="label mono">Mon parcours, en un document.</p>
+                        <h3>Téléchargez mon CV complet.</h3>
+                    </div>
+                    <a class="btn btn-primary" href="cv.pdf" download id="cvDownloadBtn2">Télécharger le CV <span class="arrow">↓</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 05 · CONTACT ================= -->
+        <section id="contact" class="contact fade-in">
+            <div class="container">
+                <p class="label mono">05 / On en parle ?</p>
+                <h2 class="contact-title">Un projet en tête ?<br>Construisons-le.</h2>
+
+                <a href="mailto:audreyassoua22@gmail.com" class="contact-mail">
+                    <span>audreyassoua22@gmail.com</span>
+                    <span class="arrow">↗</span>
+                </a>
+
+                <div class="contact-row">
+                    <span class="mono"><i class="fa-solid fa-phone"></i> 07 68 63 39 06</span>
+                    <span class="mono"><i class="fa-solid fa-location-dot"></i> Abidjan, Côte d'Ivoire</span>
+                    <span class="contact-links mono">
+                        <a href="https://www.linkedin.com/in/arlene-assoua-55b06427b" target="_blank" rel="noopener">LinkedIn</a> /
+                        <a href="https://github.com/Arlene020503" target="_blank" rel="noopener">GitHub</a> /
+                        <a href="https://www.tiktok.com/@artech002?_r=1&_t=ZN-99LF98iSne2" target="_blank" rel="noopener">TikTok</a>
+                    </span>
+                </div>
+
+                <div class="linkedin-note">
+                    <p><strong>Contenu éducatif sur LinkedIn.</strong> Je partage régulièrement des posts sur la Data, l'IA et le développement — vulgarisation, conseils et veille tech.</p>
+                    <a href="https://www.linkedin.com/in/arlene-assoua-55b06427b" target="_blank" rel="noopener" class="btn btn-light">Suivre sur LinkedIn <span class="arrow">↗</span></a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-row mono">
+            <span>© 2026 Arlene Assoua</span>
+            <span>Développeuse Data &amp; IA · Abidjan</span>
+            <a href="#">Retour en haut ↑</a>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+        <button class="lightbox-prev" id="lightboxPrev" aria-label="Précédente"><i class="fa-solid fa-chevron-left"></i></button>
+        <img src="" alt="Aperçu" id="lightboxImg" class="lightbox-img">
+        <button class="lightbox-next" id="lightboxNext" aria-label="Suivante"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+    <div class="lightbox-overlay" id="lightboxOverlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

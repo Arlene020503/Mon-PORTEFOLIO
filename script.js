@@ -5,6 +5,35 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /* ------------------------------------------
+       0. Mode sombre / clair
+       - par défaut : suit le réglage du téléphone / ordinateur
+       - le bouton soleil/lune change et mémorise le choix
+    ------------------------------------------ */
+    const themeToggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    function setTheme(t) {
+        root.setAttribute('data-theme', t);
+        const meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', t === 'dark' ? '#15101b' : '#8b5fbf');
+    }
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            setTheme(next);
+            try { localStorage.setItem('portfolio-theme', next); } catch (e) {}
+        });
+    }
+    // Si le visiteur n'a rien choisi, suivre les changements du système
+    if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            let saved = null;
+            try { saved = localStorage.getItem('portfolio-theme'); } catch (err) {}
+            if (!saved) setTheme(e.matches ? 'dark' : 'light');
+        });
+    }
+    setTheme(root.getAttribute('data-theme') || 'light');
+
+    /* ------------------------------------------
        1. Barre de progression de lecture
     ------------------------------------------ */
     const readProgress = document.getElementById('readProgress');
@@ -101,18 +130,18 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ------------------------------------------
        5. Effet typing hero
     ------------------------------------------ */
-    const texts = [
-        'Développeuse d\'Applications',
-        'Data & Intelligence Artificielle',
-        'Créatrice de Bots & Agents IA',
-        'Développeuse Mobile Flutter'
-    ];
+    // Les phrases viennent de lang.js (français ou anglais selon la langue choisie)
+    let texts = window.TYPED_TEXTS || ['Développeuse Data & IA'];
     let ti = 0, ci = 0, deleting = false;
+    document.addEventListener('langchange', () => {
+        texts = window.TYPED_TEXTS;
+        ti = 0; ci = 0; deleting = false;
+    });
     const typedEl = document.getElementById('typedText');
 
     function typeLoop() {
         if (!typedEl) return;
-        const current = texts[ti];
+        const current = texts[ti % texts.length];
         if (!deleting) {
             typedEl.textContent = current.slice(0, ++ci);
             if (ci === current.length) { deleting = true; setTimeout(typeLoop, 2000); return; }
@@ -169,8 +198,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fonction réutilisable pour filtrer les projets
     function filterProjects(filterValue) {
         projectCards.forEach(card => {
-            const cat = card.dataset.category;
-            const visible = filterValue === 'all' || cat === filterValue;
+            // Une carte peut avoir plusieurs catégories séparées par un espace (ex : "web mobile ia")
+            const cats = (card.dataset.category || '').split(' ');
+            const visible = filterValue === 'all' || cats.includes(filterValue);
             if (visible) {
                 card.classList.remove('hidden');
                 card.style.animation = 'none';
