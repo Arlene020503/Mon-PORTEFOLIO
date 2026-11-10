@@ -190,39 +190,167 @@ document.addEventListener('DOMContentLoaded', () => {
     skillBars.forEach(bar => barObserver.observe(bar));
 
     /* ------------------------------------------
-       8. Filtre projets
+       8. Projets : carrousel + filtres
+       - chaque carte reçoit une grande image de couverture
+       - les cartes sont rangées en "pages" (2 par page sur ordinateur, 1 sur téléphone)
+       - flèches ← →, compteur 01 / 06, glissement au doigt, flèches du clavier
     ------------------------------------------ */
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
+    const projectCards = Array.from(document.querySelectorAll('.project-card'));
+    const projectsContainer = document.querySelector('.projects-container');
 
-    // Fonction réutilisable pour filtrer les projets
+    // --- a) Image de couverture en haut de chaque carte ---
+    function coverTitle(card) {
+        const h3 = card.querySelector('.project-header h3');
+        return h3 ? (h3.childNodes[0].nodeValue || '').trim() : '';
+    }
+    projectCards.forEach(card => {
+        const firstImg = card.querySelector('.static-img');
+        const icon = card.querySelector('.project-icon i');
+        const cover = document.createElement('div');
+        cover.className = 'project-cover' + (firstImg ? '' : ' no-image') + (card.querySelector('.gallery-phone') ? ' phone' : '');
+        if (firstImg) {
+            const img = document.createElement('img');
+            img.src = firstImg.getAttribute('src');
+            img.alt = '';
+            img.loading = 'lazy';
+            cover.appendChild(img);
+            // clic sur la couverture = ouvrir la galerie
+            cover.addEventListener('click', () => firstImg.click());
+        } else if (icon) {
+            const big = document.createElement('i');
+            big.className = icon.className + ' cover-icon';
+            cover.appendChild(big);
+        }
+        const word = document.createElement('span');
+        word.className = 'cover-word';
+        const caption = document.createElement('span');
+        caption.className = 'cover-caption mono';
+        cover.append(word, caption);
+        card.prepend(cover);
+    });
+    function refreshCovers() {
+        projectCards.forEach(card => {
+            const badge = card.querySelector('.project-badge');
+            card.querySelector('.cover-word').textContent = coverTitle(card);
+            card.querySelector('.cover-caption').textContent = badge ? badge.textContent.trim() : '';
+        });
+    }
+    refreshCovers();
+    document.addEventListener('langchange', refreshCovers);
+
+    // --- b) Structure du carrousel ---
+    const carousel = document.createElement('div');
+    carousel.className = 'project-carousel';
+    const viewport = document.createElement('div');
+    viewport.className = 'project-viewport';
+    projectsContainer.parentNode.insertBefore(carousel, projectsContainer);
+    viewport.appendChild(projectsContainer);
+    carousel.appendChild(viewport);
+
+    const prevBtn = document.createElement('button');
+    prevBtn.className = 'carousel-arrow carousel-prev';
+    prevBtn.type = 'button';
+    prevBtn.setAttribute('aria-label', 'Projets précédents');
+    prevBtn.innerHTML = '←';
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'carousel-arrow carousel-next';
+    nextBtn.type = 'button';
+    nextBtn.setAttribute('aria-label', 'Projets suivants');
+    nextBtn.innerHTML = '→';
+    const status = document.createElement('span');
+    status.className = 'carousel-status mono';
+    const controls = document.createElement('div');
+    controls.className = 'carousel-controls';
+    controls.append(prevBtn, status, nextBtn);
+    carousel.append(controls);
+
+    let page = 0;
+    const perPage = () => (window.innerWidth > 1000 ? 2 : 1);
+    const visibleCards = () => projectCards.filter(c => !c.classList.contains('hidden'));
+    const pageCount = () => Math.max(1, Math.ceil(visibleCards().length / perPage()));
+    const pad = n => String(n).padStart(2, '0');
+
+    function goTo(newPage, animate = true) {
+        const total = pageCount();
+        page = Math.max(0, Math.min(newPage, total - 1));
+        const gap = parseFloat(getComputedStyle(projectsContainer).columnGap) || 0;
+        const shift = page * (viewport.clientWidth + gap);
+        projectsContainer.style.transition = animate ? '' : 'none';
+        projectsContainer.style.transform = `translateX(${-shift}px)`;
+
+        // cartes de la page affichée : petite animation d'entrée
+        const cards = visibleCards();
+        const per = perPage();
+        const current = cards.slice(page * per, page * per + per);
+        cards.forEach(c => c.classList.toggle('is-current', current.includes(c)));
+        if (animate) {
+            current.forEach((c, i) => {
+                c.classList.remove('slide-in');
+                void c.offsetWidth;
+                c.style.animationDelay = (i * 80) + 'ms';
+                c.classList.add('slide-in');
+            });
+        }
+        // hauteur = carte la plus haute de la page (évite les grands vides)
+        const h = Math.max(...current.map(c => c.offsetHeight), 0);
+        viewport.style.height = (h + 16) + 'px';
+
+        status.textContent = `${pad(page + 1)} / ${pad(total)}`;
+        prevBtn.disabled = page === 0;
+        nextBtn.disabled = page >= total - 1;
+        carousel.classList.toggle('single-page', total <= 1);
+    }
+
+    prevBtn.addEventListener('click', () => goTo(page - 1));
+    nextBtn.addEventListener('click', () => goTo(page + 1));
+
+    // flèches du clavier quand la section projets est à l'écran
+    document.addEventListener('keydown', e => {
+        if (document.querySelector('.lightbox.active')) return;
+        if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+        const r = carousel.getBoundingClientRect();
+        if (r.top > window.innerHeight * 0.6 || r.bottom < window.innerHeight * 0.3) return;
+        if (e.key === 'ArrowRight') goTo(page + 1);
+        if (e.key === 'ArrowLeft') goTo(page - 1);
+    });
+
+    // glisser au doigt (téléphone / tablette)
+    let startX = null, startY = null;
+    viewport.addEventListener('touchstart', e => { startX = e.touches[0].clientX; startY = e.touches[0].clientY; }, { passive: true });
+    viewport.addEventListener('touchend', e => {
+        if (startX === null) return;
+        const dx = e.changedTouches[0].clientX - startX;
+        const dy = e.changedTouches[0].clientY - startY;
+        if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) goTo(page + (dx < 0 ? 1 : -1));
+        startX = null;
+    });
+
+    // recalculer quand la fenêtre change de taille, quand les images arrivent, ou quand la langue change
+    let resizeTimer;
+    window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => goTo(page, false), 120); });
+    window.addEventListener('load', () => goTo(page, false));
+    document.addEventListener('langchange', () => setTimeout(() => goTo(page, false), 50));
+    projectsContainer.querySelectorAll('img').forEach(img => img.addEventListener('load', () => goTo(page, false), { once: true }));
+
+    // --- c) Filtres ---
     function filterProjects(filterValue) {
         projectCards.forEach(card => {
             // Une carte peut avoir plusieurs catégories séparées par un espace (ex : "web mobile ia")
             const cats = (card.dataset.category || '').split(' ');
-            const visible = filterValue === 'all' || cats.includes(filterValue);
-            if (visible) {
-                card.classList.remove('hidden');
-                card.style.animation = 'none';
-                void card.offsetWidth; // reflow
-                card.style.animation = 'fadeInCard 0.4s ease forwards';
-            } else {
-                card.classList.add('hidden');
-            }
+            card.classList.toggle('hidden', !(filterValue === 'all' || cats.includes(filterValue)));
         });
+        goTo(0);
     }
-
-    // Initialiser l'affichage au chargement
-    filterProjects('all');
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            const filter = btn.dataset.filter;
-            filterProjects(filter);
+            filterProjects(btn.dataset.filter);
         });
     });
+    filterProjects('all');
 
     /* ------------------------------------------
        9. Lightbox — images statiques cliquables
