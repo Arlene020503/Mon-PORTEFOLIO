@@ -113,6 +113,7 @@ const EN = {
         "balance sheet and financial ratio analysis, dashboard, AI assistant on its own page, new purple interface.",
     "Télécharger l'app desktop (Windows)": "Download the desktop app (Windows)",
     "Ar_NalyseIA.exe · 52 Mo": "Ar_NalyseIA.exe · 52 MB",
+    "MonLogement.apk · Android · 53 Mo": "MonLogement.apk · Android · 53 MB",
 
     // Bot Telegram
     "Bot Telegram Touristique": "Tourism Telegram Bot",
